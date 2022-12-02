@@ -1,0 +1,1 @@
+# properties-wp-theme
