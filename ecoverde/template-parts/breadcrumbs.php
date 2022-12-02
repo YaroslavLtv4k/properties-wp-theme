@@ -20,7 +20,7 @@ if(get_field('breadcrumbs_bg_image')){
           if ('property' == get_post_type()) {
             echo '<h2 class="mb-3 bread">Property Details</h2>';
           }else{
-            echo '<h1 class="mb-3 bread">' . the_title() . '</h1>';
+            echo '<h1 class="mb-3 bread">' . get_the_title() . '</h1>';
           }
         ?>
       </div>
