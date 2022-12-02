@@ -54,7 +54,11 @@
 		</ul>
 	</li>
 	<li><a href="#offer-header">Offer Header</a></li>
-	<li><a href="#posts">Posts</a></li>
+	<li><a href="#posts">Posts</a>
+		<ul>
+			<li>User can choose how many posts will be shown</li>
+		</ul>
+	</li>
 </ul>
 
 <h2>Category</h2>
