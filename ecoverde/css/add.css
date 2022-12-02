@@ -2,6 +2,15 @@ body{
 	overflow-x: hidden;
 }
 
+.ftco-navbar-light .navbar-brand span {
+    color: inherit;
+}
+.navbar-brand span{
+	font-weight: 400;
+	margin-left: 10px;
+	text-transform: capitalize;
+}
+
 .pills .features li {
     list-style: none;
     width: 33%;

@@ -16,7 +16,13 @@ if(get_field('breadcrumbs_bg_image')){
           <?php ecoverde_the_breadcrumb() ?>
         </p>
         <!-- If the page is property post type -->
-        <h1 class="mb-3 bread"><?php echo ('property' == get_post_type()) ? 'Property Details' : the_title(); ?></h1>
+        <?php 
+          if ('property' == get_post_type()) {
+            echo '<h2 class="mb-3 bread">Property Details</h2>';
+          }else{
+            echo '<h1 class="mb-3 bread">' . the_title() . '</h1>';
+          }
+        ?>
       </div>
     </div>
   </div>
