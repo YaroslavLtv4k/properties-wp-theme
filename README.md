@@ -101,7 +101,7 @@
 <ul>
 	<li>The entire footer is made up of widgets
 		<ul>
-			<li>All menu links are with icons, so i made a JS code after </ footer > on 23th line. If shorty: i add < span > tag with class of icon before < a > tag in < li > tag <pre>:)</pre> </li>
+			<li>All menu links are with icons, so i made a JS code after < /footer > on 23th line. If shortly: i add < span > tag with class of icon before < a > tag in < li > tag <pre>:)</pre> </li>
 		</ul>
 	</li>
 	<li>Menu widgets are workable, you can click on every page</li>
