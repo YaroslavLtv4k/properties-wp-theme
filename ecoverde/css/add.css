@@ -1,0 +1,169 @@
+body{
+	overflow-x: hidden;
+}
+
+.pills .features li {
+    list-style: none;
+    width: 33%;
+    float: left;
+}
+@media (max-width: 768px){
+	.pills .features li {
+    list-style: none;
+    width: 100%;
+    float: none;
+}
+}
+
+.ftco-navbar-light .navbar-nav > .nav-item.current-menu-item > a {
+    color: #24A148;
+}
+
+.block-27 ul li {
+    display: inline-block;
+    margin-bottom: 4px;
+    font-weight: 400;
+    margin: 4px 2px;
+}
+
+.block-27 ul span.current a, .block-27 ul span.current {
+    background: #24A148;
+    color: #fff;
+    border: 1px solid transparent;
+}
+
+
+.property_type_tabs{
+	display: flex;
+	justify-content: center;
+	padding-bottom: 25px;
+	margin-top: -25px;
+}
+.property_type_tabs ul{
+	display: flex;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.property_type_tabs ul li{
+	padding: 7px 0;
+	background: #ffffff;
+    border: 1px solid #e6e6e6;
+	border-radius: 5px;
+	margin: 0 8px;
+	transition: .5s;
+	position: relative;
+	cursor: pointer;
+	padding: 7px 20px;
+	height: 100%;
+}
+.property_type_tabs ul li.active,
+.property_type_tabs ul li:hover{
+	color: #fff !important;
+}
+/*All*/
+.property_type_tabs ul li#pr-all.active,
+.property_type_tabs ul li#pr-all:hover{
+	background: #0c1242;
+}
+.property_type_tabs ul li#pr-all{
+	color: #0c1242;
+}
+/*Rent*/
+.property_type_tabs ul li#pr-rent.active,
+.property_type_tabs ul li#pr-rent:hover{
+	background: #24A148;
+}
+.property_type_tabs ul li#pr-rent{
+	color: #24A148;
+}
+/*Sale*/
+.property_type_tabs ul li#pr-sale.active,
+.property_type_tabs ul li#pr-sale:hover{
+	background: #e16262;
+}
+.property_type_tabs ul li#pr-sale{
+	color: #e16262;
+}
+
+
+/*footer*/
+footer .menu{
+	margin: 0 !important;
+	padding: 0 !important;
+	list-style: none;
+}
+.wp-widget-group__inner-blocks ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	display: flex;
+}
+.wp-widget-group__inner-blocks ul span{
+	width: 80px;
+    padding-top: 2px;
+}
+.wp-widget-group__inner-blocks .ftco-footer-social span{
+	width: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
