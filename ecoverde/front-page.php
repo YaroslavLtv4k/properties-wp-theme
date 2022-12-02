@@ -46,9 +46,11 @@ if(get_field('fr_bg_image')){
           <!-- Property Carousel on main page -->
           <?php 
 
+            $postNumber = get_field('number_of_posts');
+
             $args = [
             'post_type'        => 'property',
-            'posts_per_page'   => 7,
+            'posts_per_page'   => $postNumber,
             'tax_query' => array(
               array (
                   'taxonomy' => 'property_type',
