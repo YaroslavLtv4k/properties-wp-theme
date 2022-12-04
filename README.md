@@ -67,7 +67,7 @@
 	<li>This file is a template that you can choose in adding new page</li>
 	<li><a href="#breadcrumbs">Breadcrumbs</a></li>
 	<li><a href="#offer-header">Offer Header</a></li>
-	<li>I thought if will be good idea to add tabs to filter post
+	<li>I thought it will be good idea to add tabs to filter post
 		<ul>
 			<li>I used isotope js file (AJAX filter that uses classes)</li>
 			<li>It's only small issue with pagination, i find the solve, but it's with js - <a href="https://codepen.io/TimRizzo/details/ervrRq">Solve</a></li>
