@@ -44,7 +44,7 @@
 <ul>
 	<li>Displaying h1 title of the page
 		<ul>
-			<li>Replace / with </br> </li>
+			<li>Replace / with < / br > </li>
 		</ul>
 	</li>
 	<li>Title Desc with ACF</li>
