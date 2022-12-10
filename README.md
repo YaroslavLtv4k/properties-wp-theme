@@ -1,8 +1,14 @@
 # properties-wp-theme
+<ul>
+	<li><a href="#version-10">Version 1.0</a></li>
+	<li><a href="#version-20">Version 2.0</a></li>
+</ul>
 
 <blockquote>
 	I created a wordpress theme based on HTML template from internet, below you can see what part of theme did i make and how i did it
 </blockquote>
+
+<h2>Version 1.0</h2>
 
 <h2>Header:</h2>
 <h3>header.php</h3>
@@ -122,8 +128,13 @@
 	<li>CPT UI</li>
 </ul>
 
-
-
+<br>
+<br>
+<br>
+<br>				
+<br>
+				
+				
 <h2>Version 2.0</h2>
 <blockquote>
 	Here you can see changes that i made in second version of the website
