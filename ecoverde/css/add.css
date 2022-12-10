@@ -66,8 +66,8 @@ body{
 	padding: 7px 20px;
 	height: 100%;
 }
-.property_type_tabs ul li.active,
-.property_type_tabs ul li:hover{
+.property_type_tabs ul li.active a,
+.property_type_tabs ul li:hover a{
 	color: #fff !important;
 }
 /*All*/
@@ -75,7 +75,7 @@ body{
 .property_type_tabs ul li#pr-all:hover{
 	background: #0c1242;
 }
-.property_type_tabs ul li#pr-all{
+.property_type_tabs ul li#pr-all a{
 	color: #0c1242;
 }
 /*Rent*/
@@ -83,7 +83,7 @@ body{
 .property_type_tabs ul li#pr-rent:hover{
 	background: #24A148;
 }
-.property_type_tabs ul li#pr-rent{
+.property_type_tabs ul li#pr-rent a{
 	color: #24A148;
 }
 /*Sale*/
@@ -91,7 +91,7 @@ body{
 .property_type_tabs ul li#pr-sale:hover{
 	background: #e16262;
 }
-.property_type_tabs ul li#pr-sale{
+.property_type_tabs ul li#pr-sale a{
 	color: #e16262;
 }
 

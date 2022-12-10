@@ -121,3 +121,75 @@
 	<li>ACF</li>
 	<li>CPT UI</li>
 </ul>
+
+
+
+<h2>Version 2.0</h2>
+<blockquote>
+	Here you can see changes that i made in second version of the website
+</blockquote>
+
+<h2>Theme Settings in admin</h2>
+<h3>templates/admin/admin.php</h3>
+<ul>
+	<li>Main Settings
+		<ul>
+			<li>User can choose how many posts will be shown on the front-page</li>
+		</ul>
+	</li>
+	<li>Social Media Settings
+		<ul>
+			<li>User can fill in links to his social media</li>
+			<li>Links will display with selfmade plugin 'Social Media'</li>
+		</ul>
+	</li>
+</ul>
+
+<h2>Plugin 'Social Media'</h2>
+<h3>plugin/social-media.php</h3>
+<ul>
+	<li>This plugin will display social media icons with shortcode [social_media] anywhere you want</li>
+	<li>If user didn't fill in the field of social media it will not be shown</li>
+</ul>
+
+<h3>Front Page (correction)</h3>
+<h4>front-page.php</h4>
+<ul>
+	<li>Now the number of posts is set on theme settings in admin</li>
+	<li>Code is cleaner</li>
+</ul>
+
+<h3>Functions (correction)</h3>
+<h4>functions.php</h4>
+<ul>
+	<li>register_post_type now in functions.php, plugin cpt ui was deleted</li>
+</ul>
+
+<h3>Functions (correction)</h3>
+<h4>functions.php</h4>
+<ul>
+	<li>register_post_type now in functions.php, plugin cpt ui was deleted</li>
+</ul>
+
+<h3>Template Parts</h3>
+<h4>Posts</h4>
+<ul>
+	<li>Tabs Have been redone without isotope
+		<ul>
+			<li>Were created new child pages Rent and Sale and now only related posts are shows</li>
+			<li>All scripts were deleted</li>
+			<li>Offer block with id, so now when people click on tab it's scrolling down to this block</li>
+		</ul>
+	</li>
+	<li>Code is cleaner</li>
+</ul>
+
+<h3>Functions (correction)</h3>
+<h4>functions.php</h4>
+<ul>
+	<li>register_post_type now in functions.php, plugin cpt ui was deleted</li>
+</ul>
+
+<h3>Plugins</h3>
+<h4>CPT UI - deleted</h4>
+<h4>Social Media - created (shortcode plugin)</h4>

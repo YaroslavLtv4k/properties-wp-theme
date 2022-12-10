@@ -1,27 +1,44 @@
+
+
 <div class="property_type_tabs">
   <ul>
-    <li id="pr-all" class="active" data-filter="*">All</li>
-    <li id="pr-rent" data-filter=".rent">Rent</li>
-    <li id="pr-sale" data-filter=".sale">Sale</li>
+    <li id="pr-all"><a href="/properties#offer-block">All</a></li>
+    <li id="pr-rent"><a href="/rent#offer-block">Rent</a></li>
+    <li id="pr-sale"><a href="/sale#offer-block">Sale</a></li>
   </ul>
 </div>
 
 <div class="row all-properties">
 
 <?php 
+global $wp;
+$cur_url = home_url( $wp->request );
+
+if (str_contains( $cur_url, 'rent')) {
+  $terms_value = 'rent';
+  echo '<script>document.querySelector("#pr-rent").classList.add("active")</script>';
+}elseif (str_contains( $cur_url, 'sale')) {
+  $terms_value = 'sale';
+  echo '<script>document.querySelector("#pr-sale").classList.add("active")</script>';
+}else{
+  $terms_value = ['sale', 'rent'];
+  echo '<script>document.querySelector("#pr-all").classList.add("active")</script>';
+}
+
 
 $args = [
-'post_type'        => 'property',
-'order' => 'ASC',
-'tax_query' => array(
-  array (
-      'taxonomy' => 'property_type',
-      'field' => 'slug',
-      'terms' => ['rent', 'sale'],
-      )
-  ),
-'paged' => $paged,     
+    'post_type'        => 'property',
+    'order' => 'ASC',
+    'tax_query' => array(
+      array (
+          'taxonomy' => 'property_type',
+          'field' => 'slug',
+          'terms' => $terms_value,
+          )
+      ),
+    'paged' => $paged,     
 ];
+
 
 $query = new WP_Query( $args ); 
 if ( $query->have_posts() ) {
@@ -38,17 +55,8 @@ $tax_name = $term->name;
   <div class="property-wrap ftco-animate">
     <a href="<?php the_permalink() ?>" class="img" style="background-image: url(<?php the_field('pr_image') ?>);">
       <div class="rent-sale">
-        <?php
-        // What the type of Property
-        if ($tax_name == 'Rent') {
-          echo "<span class='rent'>" . $tax_name . "</span>";
-        }elseif ($tax_name == 'Sale') {
-          echo "<span class='sale'>" . $tax_name . "</span>";
-        }else{
-          echo '';
-        }
-
-        ?>
+        <!-- Type -->
+        <?php echo '<span class="'. mb_strtolower($tax_name) . '">' . $tax_name . '</span>'; ?>
       </div>
       <?php 
       if(get_field('pr_price')){
@@ -135,26 +143,3 @@ wp_reset_postdata();
   </div>
 </div>
 </div>
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-<script>
-   $(document).ready( function() {   
-
-$('.all-properties').isotope({
-  itemSelector: '.property-item',
-});
-
-// filter items on button click
-$('.property_type_tabs').on( 'click', 'li', function() {
-  var filterValue = $(this).attr('data-filter');
-  $('.all-properties').isotope({ filter: filterValue });
-  $('.property_type_tabs li').removeClass('active');
-  $(this).addClass('active');
-});
-
-
-})
-</script>

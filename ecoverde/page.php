@@ -3,21 +3,34 @@
 <?php get_template_part('template-parts/breadcrumbs') ?>
 
 <style>
-	.page-title{
+	.page-section{
 		height: 60vh;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		min-height: 500px;		
 	}
-	h1{
-
+	.page-title{
+		text-align: center;
+		padding: 30px;
+	}
+	.page-content{
+		text-align: center;
 	}
 </style>
 
 
-<div class="page-title">
-	<h1><?php the_title() ?> content</h1>
+<div class="page-section">
+
+	<div class="page-title">
+		<h1><?php the_title() ?> content</h1>
+	</div>
+
+	<div class="page-content">
+		<?php the_content(); ?>
+	</div>
+
 </div>
+
+
+
 
 
 

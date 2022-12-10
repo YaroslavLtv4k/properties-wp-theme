@@ -104,18 +104,15 @@ function ecoverde_the_breadcrumb(){
 			echo '<style> .breadcrumbs{display:none} </style>';
 		}
 		elseif (is_page()) { // pages
-			if ($post->post_parent ) {
-				$parent_id  = $post->post_parent;
-				$breadcrumbs = array();
-				while ($parent_id) {
-					$page = get_page($parent_id);
-					$breadcrumbs[] = '<span class="mr-2"><a href="' . get_permaspannk($page->ID) . '">' . get_the_title($page->ID) . '</a></span>';
-					$parent_id  = $page->post_parent;
-				}
-				$breadcrumbs = array_reverse($breadcrumbs);
-				foreach ($breadcrumbs as $crumb) echo $crumb . ' ';
-			}
-			echo the_title();
+			$items = [];
+    	$items[] = '<strong> '.get_the_title().'</strong>';
+    	$page = &$post;
+    	while( $page->post_parent ){
+        $items[] = '<span class="mr-2"><a href="'.get_permalink($page->post_parent).'" title="'.get_the_title($page->post_parent).'">'.get_the_title($page->post_parent).'</a></span>';
+        $page = get_post($page->post_parent);
+    	}
+	    $items = array_reverse($items);
+	    echo implode('/', $items);
 		}
 		elseif (is_category()) { // category
 			global $wp_query;
@@ -141,6 +138,110 @@ function ecoverde_the_breadcrumb(){
 	      echo '<span class="mr-2"><i class="fa fa-home" aria-hidden="true"></i>Home</span>';
 	}
 }
+
+
+// Theme Settings in admin panel
+if (is_admin()) {
+	require_once(get_template_directory() . '/templates/admin/admin.php');
+
+}
+
+
+// Post Type: Properties
+function cptui_register_my_cpts_property() {
+
+	$labels = [
+		"name" => esc_html__( "Properties", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "Property", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "Properties", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => false,
+		"rewrite" => [ "slug" => "property", "with_front" => true ],
+		"query_var" => true,
+		"menu_icon" => "dashicons-admin-home",
+		"supports" => [ "title", "editor", "thumbnail" ],
+		"taxonomies" => [ "property_type" ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "property", $args );
+}
+
+add_action( 'init', 'cptui_register_my_cpts_property' );
+
+// Taxonomy: Property Type
+function cptui_register_my_taxes_property_type() {
+
+	/**
+	 * Taxonomy: Property Type.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "Property Type", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "Property Type", "custom-post-type-ui" ),
+	];
+
+	
+	$args = [
+		"label" => esc_html__( "Property Type", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"public" => true,
+		"publicly_queryable" => true,
+		"hierarchical" => false,
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => [ 'slug' => 'property_type', 'with_front' => true, ],
+		"show_admin_column" => false,
+		"show_in_rest" => true,
+		"show_tagcloud" => false,
+		"rest_base" => "property_type",
+		"rest_controller_class" => "WP_REST_Terms_Controller",
+		"rest_namespace" => "wp/v2",
+		"show_in_quick_edit" => false,
+		"sort" => false,
+		"show_in_graphql" => false,
+	];
+	register_taxonomy( "property_type", [ "property" ], $args );
+}
+add_action( 'init', 'cptui_register_my_taxes_property_type' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

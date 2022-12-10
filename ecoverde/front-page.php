@@ -46,7 +46,7 @@ if(get_field('fr_bg_image')){
           <!-- Property Carousel on main page -->
           <?php 
 
-            $postNumber = get_field('number_of_posts');
+            $postNumber = get_option('front_page_num');
 
             $args = [
             'post_type'        => 'property',
@@ -73,21 +73,11 @@ if(get_field('fr_bg_image')){
           ?>
 
           <!-- Template of one property -->
-          <div class="item property-item <?php echo $term->slug ?>"">
+          <div class="item property-item <?php echo $term->slug ?>">
             <div class="property-wrap ftco-animate">
             <a href="<?php the_permalink() ?>" class="img" style="background-image: url(<?php the_field('pr_image') ?>);">
               <div class="rent-sale">
-                <?php
-                // What the type of Property
-                if ($tax_name == 'Rent') {
-                  echo "<span class='rent'>" . $tax_name . "</span>";
-                }elseif ($tax_name == 'Sale') {
-                  echo "<span class='sale'>" . $tax_name . "</span>";
-                }else{
-                  echo '';
-                }
-
-                ?>
+                <?php echo '<span class="'. mb_strtolower($tax_name) . '">' . $tax_name . '</span>'; ?>
               </div>
               <?php 
                 if(get_field('pr_price')){
